@@ -12,11 +12,18 @@ while True:
         with open (hots_temp, 'r+') as file:
             content = file.read()
             print(content)
-            for websiet in website_list:
+            for website in website_list:
                 if website in content:
                     pass 
                 else:
-                    file.write(content)
+                    file.write(redirect+" "+content"\n")
     else:
+        with open(hosts_tmp, 'r+') as file:
+            content = file.readlines()
+            file.seek(0)
+            for line in content:
+                if not any (website in line for website in website_list):
+                    file.write(line:)
+            file.truncate()
         print("Fun hours")
     time.sleep(5)
